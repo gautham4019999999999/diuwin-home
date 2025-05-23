@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DiuWin</title>
+    <link rel="icon" href="/images/logo-center.jpeg" type="image/jpeg" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/buttons.css" />
     <link rel="stylesheet" href="css/layout.css" />
@@ -67,7 +68,42 @@
 
         <div class="gift-code-section">
           <h3>GIFT CODE</h3>
-          <p class="gift-code" id="gift-code"></p>
+          <div class="gift-code-container">
+            <p class="gift-code" id="gift-code"></p>
+            <div class="gift-code-actions">
+              <button id="copy-code-btn" class="action-btn" title="Copy code">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path
+                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+              <button id="edit-code-btn" class="action-btn" title="Edit code">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -135,6 +171,41 @@
         <a href="https://t.me/faclatheef">Contact Us</a>
       </div>
     </footer>
+
+    <!-- Password Popup Overlay -->
+    <div id="password-overlay" class="overlay">
+      <div class="popup">
+        <div class="popup-header">
+          <h3>Enter Admin Password</h3>
+          <button id="close-popup" class="close-btn">&times;</button>
+        </div>
+        <div class="popup-content">
+          <input
+            type="password"
+            id="admin-password"
+            placeholder="Enter password" />
+          <div class="error-message" id="password-error"></div>
+          <button id="verify-password" class="btn btn-login">Verify</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Gift Code Popup -->
+    <div id="edit-code-overlay" class="overlay">
+      <div class="popup">
+        <div class="popup-header">
+          <h3>Edit Gift Code</h3>
+          <button id="close-edit-popup" class="close-btn">&times;</button>
+        </div>
+        <div class="popup-content">
+          <input
+            type="text"
+            id="new-gift-code"
+            placeholder="Enter new gift code" />
+          <button id="save-gift-code" class="btn btn-login">Save</button>
+        </div>
+      </div>
+    </div>
 
     <script src="js/main.js"></script>
   </body>
