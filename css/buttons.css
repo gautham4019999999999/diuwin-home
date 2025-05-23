@@ -1,0 +1,140 @@
+/* Button Styles */
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+/* Login Button */
+.btn-login {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-login:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Register Button */
+.btn-register {
+  background-color: var(--button-color);
+  color: #0a0d17;
+  font-weight: 600;
+}
+
+.btn-register:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(95, 236, 208, 0.2);
+}
+
+/* Larger Register Button */
+.btn-register-large {
+  background-color: var(--button-color);
+  color: #0a0d17;
+  font-weight: 600;
+  padding: 0.7rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+.btn-register-large:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(95, 236, 208, 0.3);
+}
+
+/* Login Alternative Button */
+.btn-login-alt {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--primary-color);
+  padding: 0.6rem 2rem;
+}
+
+.btn-login-alt:hover {
+  background-color: rgba(95, 236, 208, 0.1);
+  box-shadow: 0 0 10px rgba(95, 236, 208, 0.2);
+}
+
+/* Telegram Button */
+.btn-telegram {
+  background-color: #2AABEE;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+}
+
+.btn-telegram:hover {
+  background-color: #229ED9;
+  box-shadow: 0 4px 12px rgba(42, 171, 238, 0.3);
+}
+
+/* Button Animation */
+.btn-register, .btn-register-large, .btn-telegram {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-register::after, 
+.btn-register-large::after, 
+.btn-telegram::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+.btn-register:active::after, 
+.btn-register-large:active::after, 
+.btn-telegram:active::after {
+  opacity: 0.4;
+  transform: scale(0, 0);
+  animation: ripple 0.8s ease-out;
+}
+
+/* Responsive Button Styles */
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn-register-large {
+    padding: 0.6rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-buttons .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
